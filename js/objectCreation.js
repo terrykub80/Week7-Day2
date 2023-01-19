@@ -47,7 +47,7 @@
 
 // console.clear();
 
-// **************************************************************************************************************************
+// //////****************************************************************************/
 
 /*
     JavaScript Object Instantiation -> Class Instantiation
@@ -166,7 +166,7 @@
 // leo.sleep(15);
 
 
-//****************************************************************************/
+//////****************************************************************************/
 
 //////////////////
 // Object.create//
@@ -207,151 +207,123 @@
 
 // console.clear();
 
-//****************************************************************************/
+//////****************************************************************************/
 
 // //////////////////////////////////////////////////////////////////
 // // Function Instantiation with Shared Methods and Object.create //
 // //////////////////////////////////////////////////////////////////
 
-let animalMethods = {
-    eat: function(amount){
-        this.energy += amount;
-        console.log(`${this.name} is eating ${amount} and energy is now ${this.energy}`);
-    },
-    sleep: function(amount){
-        this.energy += amount;
-        console.log(`${this.name} is sleeping ${amount} and energy is now ${this.energy}`);
-    },
-    play: function(amount){
-        this.energy -= amount;
-        console.log(`${this.name} is playing ${amount} and energy is now ${this.energy}`);
-    }
-}
+// let animalMethods = {
+//     eat: function(amount){
+//         this.energy += amount;
+//         console.log(`${this.name} is eating ${amount} and energy is now ${this.energy}`);
+//     },
+//     sleep: function(amount){
+//         this.energy += amount;
+//         console.log(`${this.name} is sleeping ${amount} and energy is now ${this.energy}`);
+//     },
+//     play: function(amount){
+//         this.energy -= amount;
+//         console.log(`${this.name} is playing ${amount} and energy is now ${this.energy}`);
+//     }
+// }
 
-function Animal(name, energy=10){
-    let animal = Object.create(animalMethods);
-    animal.name = name;
-    animal.energy = energy;
+// function Animal(name, energy=10){
+//     let animal = Object.create(animalMethods);
+//     animal.name = name;
+//     animal.energy = energy;
 
-    return animal
-}
+//     return animal
+// }
 
-let buddy = Animal('Buddy');
-buddy.eat(10);
-buddy.play(5);
-buddy.sleep(10);    
+// let buddy = Animal('Buddy');
+// buddy.eat(10);
+// buddy.play(5);
+// buddy.sleep(10);    
 
-let leo = Animal('Leo', 20);
-leo.eat(5);
-leo.play(20);
-leo.sleep(15);
+// let leo = Animal('Leo', 20);
+// leo.eat(5);
+// leo.play(20);
+// leo.sleep(15);
 
+
+// //////****************************************************************************/
 // // Function prototype
-// function doNothing(){};
-// console.log(doNothing.prototype)
-// console.log(typeof doNothing.prototype);
+// // function doNothing(){};
+// // console.log(doNothing.prototype)
+// // console.log(typeof doNothing.prototype);
+// //////****************************************************************************/
 
 // //////////////////////////////
 // // Prototypal Instantiation //
 // //////////////////////////////
 
-// // function Animal(name, energy=10){
-// //     let animal = Object.create(Animal.prototype);
-// //     animal.name = name;
-// //     animal.energy = energy;
 
-// //     return animal
-// // }
+// function Animal(name, energy=10){
+//     let animal = Object.create(Animal.prototype);
+//     animal.name = name;
+//     animal.energy = energy;
 
-// // Animal.prototype.eat = function(amount){
-// //     this.energy += amount;
-// //     console.log(`${this.name} is eating and energy is now ${this.energy}`);
-// // }
+//     return animal
+// }
 
-// // Animal.prototype.sleep = function(amount){
-// //     this.energy += amount;
-// //     console.log(`${this.name} is sleeping and energy is now ${this.energy}`);
-// // }
+// Animal.prototype.eat = function(amount){
+//     console.log(`${this.name} has ${this.energy} energy`)
+//     this.energy += amount;
+//     console.log(`${this.name} is eating ${amount} and energy is now ${this.energy}`);
+// }
 
-// // Animal.prototype.play = function(amount){
-// //     this.energy -= amount;
-// //     console.log(`${this.name} is playing and energy is now ${this.energy}`);
-// // }
+// Animal.prototype.sleep = function(amount){
+//     console.log(`${this.name} has ${this.energy} energy`)
+//     this.energy += amount;
+//     console.log(`${this.name} is sleeping ${amount} and energy is now ${this.energy}`);
+// }
 
-// // let buddy = Animal('Buddy');
-// // buddy.eat(10);
-// // buddy.play(5);
-// // buddy.sleep(10);    
+// Animal.prototype.play = function(amount){
+//     console.log(`${this.name} has ${this.energy} energy`)
+//     this.energy -= amount;
+//     console.log(`${this.name} is playing ${amount} and energy is now ${this.energy}`);
+// }
 
-// // let leo = Animal('Leo', 20);
-// // leo.eat(5);
-// // leo.play(20);
-// // leo.sleep(15);
+// let buddy = Animal('Buddy');
+// buddy.eat(10);
+// buddy.play(5);
+// buddy.sleep(10);    
+
+// let leo = Animal('Leo', 20);
+// leo.eat(5);
+// leo.play(20);
+// leo.sleep(15);
 
 
 
+// //////****************************************************************************/
 
 // ///////////////////////////////////
 // // Pseudoclassical Instantiation //
 // ///////////////////////////////////
 
-// // function Animal(name, energy=10){
-// //     // let animal = Object.create(Animal.prototype);
-// //     this.name = name;
-// //     this.energy = energy;
+// function Animal(name, energy=10){
+//     // let animal = Object.create(Animal.prototype);
+//     this.name = name;
+//     this.energy = energy;
 
-// //     // return animal
-// // }
+//     // return animal
+// }
 
-// // Animal.prototype.eat = function(amount){
-// //     this.energy += amount;
-// //     console.log(`${this.name} is eating and energy is now ${this.energy}`);
-// // }
+// Animal.prototype.eat = function(amount){
+//     this.energy += amount;
+//     console.log(`${this.name} is eating and energy is now ${this.energy}`);
+// }
 
-// // Animal.prototype.sleep = function(amount){
-// //     this.energy += amount;
-// //     console.log(`${this.name} is sleeping and energy is now ${this.energy}`);
-// // }
+// Animal.prototype.sleep = function(amount){
+//     this.energy += amount;
+//     console.log(`${this.name} is sleeping and energy is now ${this.energy}`);
+// }
 
-// // Animal.prototype.play = function(amount){
-// //     this.energy -= amount;
-// //     console.log(`${this.name} is playing and energy is now ${this.energy}`);
-// // }
-
-// // let buddy = new Animal('Buddy');
-// // buddy.eat(10);
-// // buddy.play(5);
-// // buddy.sleep(10);    
-
-// // let leo = new Animal('Leo', 20);
-// // leo.eat(5);
-// // leo.play(20);
-// // leo.sleep(15);
-
-// /////////////////////////////////////
-// // ECMAScript 2015 - class keyword //
-// /////////////////////////////////////
-
-// class Animal{
-//     constructor(name, energy=10){
-//         this.name = name;
-//         this.energy = energy;
-//     }
-    
-//     eat(amount){
-//         this.energy += amount;
-//         console.log(`${this.name} is eating and energy is now ${this.energy}`);
-//     }
-    
-//     sleep(amount){
-//         this.energy += amount;
-//         console.log(`${this.name} is sleeping and energy is now ${this.energy}`);
-//     }
-
-//     play(amount){
-//         this.energy -= amount;
-//         console.log(`${this.name} is playing and energy is now ${this.energy}`);
-//     }
+// Animal.prototype.play = function(amount){
+//     this.energy -= amount;
+//     console.log(`${this.name} is playing and energy is now ${this.energy}`);
 // }
 
 // let buddy = new Animal('Buddy');
@@ -364,8 +336,47 @@ leo.sleep(15);
 // leo.play(20);
 // leo.sleep(15);
 
-// let myCoolArr = [];
-// let myCoolerArr = new Array();
 
-// console.log(myCoolArr);
-// console.log(myCoolerArr);
+// //////****************************************************************************/
+
+// /////////////////////////////////////
+// // ECMAScript 2015 - class keyword //
+// /////////////////////////////////////
+
+class Animal{
+    constructor(name, energy=10){
+        this.name = name;
+        this.energy = energy;
+    }
+    
+    eat(amount){
+        this.energy += amount;
+        console.log(`${this.name} is eating and energy is now ${this.energy}`);
+    }
+    
+    sleep(amount){
+        this.energy += amount;
+        console.log(`${this.name} is sleeping and energy is now ${this.energy}`);
+    }
+
+    play(amount){
+        this.energy -= amount;
+        console.log(`${this.name} is playing and energy is now ${this.energy}`);
+    }
+}
+
+let buddy = new Animal('Buddy');
+buddy.eat(10);
+buddy.play(5);
+buddy.sleep(10);    
+
+let leo = new Animal('Leo', 20);
+leo.eat(5);
+leo.play(20);
+leo.sleep(15);
+
+let myCoolArr = [];
+let myCoolerArr = new Array();
+
+console.log(myCoolArr);
+console.log(myCoolerArr);
